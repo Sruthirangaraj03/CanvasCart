@@ -60,7 +60,7 @@ export default function Admin() {
   const fetchProducts = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:8000/api/products", {
+      const res = await axios.get("https://canvascart-backendd.onrender.com/api/products", {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Handle both response formats
@@ -85,7 +85,7 @@ export default function Admin() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:8000/api/products",
+        "https://canvascart-backendd.onrender.com/api/products",
         form,
         {
           headers: {
@@ -111,7 +111,7 @@ export default function Admin() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        `http://localhost:8000/api/products/${editingProduct._id}`,
+        `https://canvascart-backendd.onrender.com/api/products/${editingProduct._id}`,
         form,
         {
           headers: {
@@ -159,7 +159,7 @@ export default function Admin() {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
         const token = localStorage.getItem("token");
-        await axios.delete(`http://localhost:8000/api/products/${id}`, {
+        await axios.delete(`https://canvascart-backendd.onrender.com/api/products/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         alert("✅ Product deleted successfully!");

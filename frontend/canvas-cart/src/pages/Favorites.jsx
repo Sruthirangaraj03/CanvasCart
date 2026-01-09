@@ -31,7 +31,7 @@ export default function Favorites() {
       if (!token) return setLoading(false);
 
       try {
-        const res = await fetch("http://localhost:8000/api/favorites", {
+        const res = await fetch("https://canvascart-backendd.onrender.com/api/favorites", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();

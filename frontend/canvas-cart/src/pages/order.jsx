@@ -36,7 +36,7 @@ const Order = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5001/api/orders/place",
+        "https://canvascart-backendd.onrender.com/api/orders/place",
         {
           shippingAddress: form,
           paymentIntentId: "dummy-id"

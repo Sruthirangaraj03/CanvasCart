@@ -44,7 +44,7 @@ const CartPage = () => {
     pincode: "",
   });
 
-  const API_BASE = "http://localhost:8000";
+  const API_BASE = "https://canvascart-backendd.onrender.com";
 
   // Load Razorpay script dynamically
   useEffect(() => {

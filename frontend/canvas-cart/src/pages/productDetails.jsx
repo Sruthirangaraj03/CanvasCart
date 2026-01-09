@@ -37,7 +37,7 @@ export default function Details() {
       setError(null);
       console.log("Fetching product with ID:", id); // Debug log
       
-      const res = await axios.get(`http://localhost:8000/api/products/${id}`);
+      const res = await axios.get(`https://canvascart-backendd.onrender.com/api/products/${id}`);
       setProduct(res.data);
     } catch (err) {
       console.error("Failed to fetch product:", err.response?.data || err.message);
@@ -50,8 +50,8 @@ export default function Details() {
   const fetchReviews = async () => {
     try {
       console.log("Fetching reviews for product ID:", id); // Debug log
-      
-      const res = await axios.get(`http://localhost:8000/api/reviews/product/${id}`);
+
+      const res = await axios.get(`https://canvascart-backendd.onrender.com/api/reviews/product/${id}`);
       setReviews(res.data);
     } catch (err) {
       console.error("Failed to fetch reviews:", err.response?.data || err.message);
@@ -71,13 +71,13 @@ export default function Details() {
     try {
       if (editingId) {
         await axios.put(
-          `http://localhost:8000/api/reviews/${editingId}`,
+          `https://canvascart-backendd.onrender.com/api/reviews/${editingId}`,
           { comment, stars: rating },
           config
         );
       } else {
         await axios.post(
-          `http://localhost:8000/api/reviews/${id}`,
+          `https://canvascart-backendd.onrender.com/api/reviews/${id}`,
           { comment, stars: rating },
           config
         );
@@ -101,7 +101,7 @@ export default function Details() {
 
   const handleDelete = async (reviewId) => {
     try {
-      await axios.delete(`http://localhost:8000/api/reviews/${reviewId}`, {
+      await axios.delete(`https://canvascart-backendd.onrender.com/api/reviews/${reviewId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -116,7 +116,7 @@ export default function Details() {
   const handleAddToCart = async () => {
     try {
       await axios.post(
-        "http://localhost:8000/api/cart/add",
+        "https://canvascart-backendd.onrender.com/api/cart/add",
         { productId: product._id, quantity: quantity }, // Use the quantity state
         {
           headers: {
@@ -140,7 +140,7 @@ export default function Details() {
       }
 
       await axios.post(
-        "http://localhost:8000/api/favorites/add",
+        "https://canvascart-backendd.onrender.com/api/favorites/add",
         { productId: product._id },
         {
           headers: {

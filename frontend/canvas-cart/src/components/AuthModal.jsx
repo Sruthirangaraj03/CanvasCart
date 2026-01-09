@@ -35,7 +35,7 @@ export default function AuthModal({ isOpen, onClose }) {
   e.preventDefault();
 
   try {
-    const res = await axios.post("http://localhost:8000/api/auth/login", loginData);
+    const res = await axios.post("https://canvascart-backendd.onrender.com/api/auth/login", loginData);
 
     // ✅ Store token and user info
     localStorage.setItem("token", res.data.token);
@@ -60,7 +60,7 @@ export default function AuthModal({ isOpen, onClose }) {
   }
 
   try {
-    await axios.post("http://localhost:8000/api/auth/signup", signupData);
+    await axios.post("https://canvascart-backendd.onrender.com/api/auth/signup", signupData);
     alert("Signup Successful! 🎨 Please login now");
 
     setIsLogin(true); // Switch to login tab

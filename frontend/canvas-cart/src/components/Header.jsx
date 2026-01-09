@@ -61,7 +61,7 @@ export default function Header() {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:8000/api/products",
+        "https://canvascart-backendd.onrender.com/api/products",
         form,
         {
           headers: {

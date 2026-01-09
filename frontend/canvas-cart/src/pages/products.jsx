@@ -31,7 +31,7 @@ export default function Products() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/products");
+      const res = await axios.get("https://canvascart-backendd.onrender.com/api/products");
       setProducts(res.data.products || []);
     } catch (err) {
       console.error("Error fetching products:", err);
